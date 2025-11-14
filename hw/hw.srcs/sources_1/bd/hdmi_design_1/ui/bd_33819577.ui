@@ -1,16 +1,17 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.41421",
-   "Default View_TopLeft":"-660,-176",
+   "Default View_ScaleFactor":"0.707105",
+   "Default View_TopLeft":"-1215,-363",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:9.0 TLS
 #  -string -flagsOSRD
 preplace inst clk_wiz_0 -pg 1 -lvl 1 -x -470 -y -460 -defaultsOSRD
 preplace inst proc_sys_reset_0 -pg 1 -lvl 1 -x -470 -y -290 -defaultsOSRD
-preplace inst axi_vdma_0 -pg 1 -lvl 2 -x 220 -y -160 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 4 -x 980 -y -40 -defaultsOSRD
 preplace inst ps7_0_axi_periph -pg 1 -lvl 1 -x -470 -y -40 -defaultsOSRD
+preplace inst axi_vdma_0 -pg 1 -lvl 2 -x 220 -y -160 -defaultsOSRD
 preplace inst axi_mem_intercon -pg 1 -lvl 3 -x 620 -y -50 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 4 -x 980 -y -40 -defaultsOSRD
+preplace inst HDMI_wrapp_0 -pg 1 -lvl 4 -x 980 -y -240 -defaultsOSRD
 levelinfo -pg 1 -660 -470 220 620 980 1190
 pagesize -pg 1 -db -bbox -sgen -660 -760 1190 140
 "

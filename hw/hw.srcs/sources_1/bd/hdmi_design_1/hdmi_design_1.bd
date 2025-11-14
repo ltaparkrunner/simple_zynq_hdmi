@@ -24,7 +24,8 @@
         "m00_couplers": {},
         "m01_couplers": {}
       },
-      "processing_system7_0": ""
+      "processing_system7_0": "",
+      "HDMI_wrapp_0": ""
     },
     "components": {
       "clk_wiz_0": {
@@ -762,6 +763,60 @@
                 "maximum": "0x7FFFFFFF"
               }
             }
+          }
+        }
+      },
+      "HDMI_wrapp_0": {
+        "vlnv": "xilinx.com:module_ref:HDMI_wrapp:1.0",
+        "xci_name": "hdmi_design_1_HDMI_wrapp_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "HDMI_wrapp",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_clk_pixel_x5": {
+            "direction": "I"
+          },
+          "i_clk_pixel": {
+            "direction": "I"
+          },
+          "tmds_p": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "tmds_n": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "tmds_clock_p": {
+            "direction": "O"
+          },
+          "tmds_clock_n": {
+            "direction": "O"
+          },
+          "i_data": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "i_valid": {
+            "direction": "I"
+          },
+          "o_ready": {
+            "direction": "O"
+          },
+          "i_sof": {
+            "direction": "I"
+          },
+          "i_eol": {
+            "direction": "I"
+          },
+          "i_rstn": {
+            "type": "rst",
+            "direction": "I"
           }
         }
       }
