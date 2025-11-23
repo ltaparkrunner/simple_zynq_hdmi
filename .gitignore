@@ -1,2 +1,5 @@
 *.xci
 *.xml
+hw/hw.cache/
+*.wdf
+
