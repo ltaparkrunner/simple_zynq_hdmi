@@ -2,4 +2,5 @@
 *.xml
 hw/hw.cache/
 *.wdf
-
+*.wpc
+hw/hw.cache/wt/
