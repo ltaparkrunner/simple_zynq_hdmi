@@ -4,3 +4,13 @@ hw/hw.cache/
 *.wdf
 *.wpc
 hw/hw.cache/wt/
+*.bxml
+*.xdc
+hw/hw.srcs/sources_1/bd/hdmi_design_1/hw_handoff/
+hw/hw.srcs/sources_1/bd/hdmi_design_1/ip
+hw/hw.srcs/sources_1/bd/hdmi_design_1/ipshared/
+hw/hw.srcs/sources_1/bd/hdmi_design_1/sim/
+hw/hw.srcs/sources_1/bd/hdmi_design_1/synth/
+hw/hw.srcs/sources_1/bd/mref/HDMI_wrapp_*/
+hw/hw.runs/
+hw/hw.sim/sim_1
