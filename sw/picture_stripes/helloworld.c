@@ -93,7 +93,6 @@ int main()
 
 	u32 Addr;
 
-    print("Hello World 1\n\r");
 	XAxiVdma myVDMA;
 	XAxiVdma_Config *config = XAxiVdma_LookupConfig(XPAR_AXI_VDMA_0_DEVICE_ID);
 	XAxiVdma_DmaSetup ReadCfg;
@@ -117,32 +116,19 @@ int main()
     	print("Write channel config failed %d\r\n");
     	return status;
     }
-    print("Hello World 2\n\r");
     Addr = (u32)&(Buffer[0]);
 
 	for(Index = 0; Index < myVDMA.MaxNumFrames; Index++) {
 		ReadCfg.FrameStoreStartAddr[Index] = Addr;
 		Addr +=  FrameSize;
 	}
-    print("Hello World 3\n\r");
 	status = XAxiVdma_DmaSetBufferAddr(&myVDMA, XAXIVDMA_READ,ReadCfg.FrameStoreStartAddr);
 	if (status != XST_SUCCESS) {
 		xil_printf("Read channel set buffer address failed %d\r\n", status);
 		print("Read channel set buffer address failed %d\r\n");
 		return XST_FAILURE;
 	}
-    print("Hello World 4\n\r");
-//    sleep(1);
-//	XAxiVdma_IntrEnable(&myVDMA, XAXIVDMA_IXR_COMPLETION_MASK, XAXIVDMA_READ);
-    print("Hello World 5\n\r");
-//    sleep(1);
-//	SetupVideoIntrSystem(&myVDMA, XPAR_FABRIC_AXI_VDMA_0_MM2S_INTROUT_INTR,&Intc);
 
-
-//    while(!myImgProcess.done){
-//    }
-//    print("Hello World 6\n\r");
-//    sleep(1);
 	status = XAxiVdma_DmaStart(&myVDMA,XAXIVDMA_READ);
 	if (status != XST_SUCCESS) {
 		if(status == XST_VDMA_MISMATCH_ERROR){
@@ -153,56 +139,20 @@ int main()
 		print("DMA Mismatch Error_2\r\n");
 		return XST_FAILURE;
 	}
-
-    print("Hello World 7\n\r");
     print("Successfully ran Hello World application");
 
     while(1){
-		char pchar[80] = "";
-
-    		fillFrameBuffer2(0, HSize, VSize, imgHSize, imgVSize,
-    		(HSize-imgHSize)/2,(VSize-imgVSize)/4, 1, imageData, Buffer, -1280*150*3);
+    		fillFrameBuffer(0, HSize, VSize, imgHSize, imgVSize,
+    		(HSize-imgHSize)/2,(VSize-imgVSize)/4, 1, imageData, Buffer);
     		sleep(5);
 
-    		fillFrameBuffer2(1, HSize, VSize, imgHSize, imgVSize,
-    		(HSize-imgHSize)/2,(VSize-imgVSize)/4, 1, imageData, Buffer, -1280*150*3);
+    		fillFrameBuffer(1, HSize, VSize, imgHSize, imgVSize,
+    		(HSize-imgHSize)/2,(VSize-imgVSize)/4, 1, imageData, Buffer);
     		sleep(4);
-			sprintf(pchar, "(VSize-imgVSize)/2 %d \n\r", (VSize-imgVSize)/2);
-			print(pchar);
-    	    print("Hello World 8\n\r");
+    	    print("Hello World app\n\r");
     	}
 
     cleanup_platform();
     return 0;
 }
-/*
- *
- * u32 variant,
-u32 dispHSize,
-u32 dispVSize,
-u32 imageHSize,
-u32 imageVSize,
-u32 hOffset,
-u32 vOffset,
-int numColors,
-char *imagePointer,
-char *videoFramePointer)
- *
- */
 
-/*
-#include <stdio.h>
-#include "platform.h"
-#include "xil_printf.h"
-
-
-int main()
-{
-    init_platform();
-
-    print("Hello World\n\r");
-    print("Successfully ran Hello World application");
-    cleanup_platform();
-    return 0;
-}
-*/
